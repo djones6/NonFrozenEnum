@@ -10,6 +10,8 @@ case .iso8601: fallthrough
 case .millisecondsSince1970: fallthrough
 case .secondsSince1970:
     print("Answer is: \(value)")
+#if !os(Linux) && swift(>=5)
 @unknown default:
     print("Unknown!")
+#endif
 }
